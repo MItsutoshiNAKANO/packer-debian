@@ -1,6 +1,6 @@
 {
     "variables": {
-        "debian_version": "8.5.0"
+        "debian_version": "9.0.0.RC4"
     },
   "builders": [
     {
@@ -12,7 +12,7 @@
         "debian-installer=en_US <wait>",
         "auto <wait>",
         "locale=en_US <wait>",
-        "kbd-chooser/method=us <wait>",
+        "kbd-chooser/method=jp <wait>",
         "keyboard-configuration/xkb-keymap=us <wait>",
         "netcfg/get_hostname={{ .Name }} <wait>",
         "netcfg/get_domain=vagrantup.com <wait>",
@@ -23,12 +23,12 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 32768,
+      "disk_size": 102400,
       "guest_os_type": "Debian_64",
       "headless": true,
       "http_directory": "http",
       "iso_checksum_type": "none",
-      "iso_url": "http://cdimage.debian.org/cdimage/release/{{user `debian_version`}}/amd64/iso-cd/debian-{{user `debian_version`}}-amd64-netinst.iso",
+      "iso_url": "https://cdimage.debian.org/cdimage/stretch_di_rc4/amd64/iso-cd/debian-stretch-DI-rc4-amd64-netinst.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
