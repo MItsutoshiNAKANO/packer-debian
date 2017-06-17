@@ -1,6 +1,6 @@
 {
     "variables": {
-        "debian_version": "9.0.0.RC4"
+        "debian_version": "9.0.0.RC5"
     },
   "builders": [
     {
@@ -14,8 +14,8 @@
         "locale=en_US <wait>",
         "kbd-chooser/method=jp <wait>",
         "keyboard-configuration/xkb-keymap=us <wait>",
-        "netcfg/get_hostname={{ .Name }} <wait>",
-        "netcfg/get_domain=vagrantup.com <wait>",
+        "netcfg/get_hostname=localhost <wait>",
+        "netcfg/get_domain= <wait>",
         "fb=false <wait>",
         "debconf/frontend=noninteractive <wait>",
         "console-setup/ask_detect=false <wait>",
@@ -28,7 +28,7 @@
       "headless": true,
       "http_directory": "http",
       "iso_checksum_type": "none",
-      "iso_url": "https://cdimage.debian.org/cdimage/stretch_di_rc4/amd64/iso-cd/debian-stretch-DI-rc4-amd64-netinst.iso",
+      "iso_url": "https://cdimage.debian.org/cdimage/stretch_di_rc5/amd64/iso-cd/debian-stretch-DI-rc5-amd64-netinst.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -62,7 +62,8 @@
         "scripts/sudoers.sh",
         "scripts/vagrant.sh",
         "scripts/vbaddguest.sh",
-        "scripts/cleanup.sh"
+        "scripts/cleanup.sh",
+        "scripts/minimize.sh"
       ],
       "only": ["virtualbox-iso"]
     }
